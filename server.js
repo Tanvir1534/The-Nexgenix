@@ -12,8 +12,9 @@ const connectDB = async () => {
     if (!uri) {
       throw new Error("MongoDB URI is not defined in the .env file.");
     }
-    // Connect to MongoDB only once here
-    await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    
+    // Connect to MongoDB without deprecated options
+    await mongoose.connect(uri);  // No need for useNewUrlParser and useUnifiedTopology
     console.log('✅ MongoDB connected successfully');
   } catch (error) {
     console.error('❌ MongoDB connection failed:', error.message);
@@ -86,4 +87,3 @@ process.on('SIGTERM', () => {
     process.exit(0);
   });
 });
-
