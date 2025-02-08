@@ -1,0 +1,1048 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter';
+  color: #FBFDF7;
+  line-height: 1.6;
+}
+/*=======Header start=======*/
+header {
+  margin-bottom: 20px;
+}
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 100px;
+  background-color: #FBFDF7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+header.navbar.scrolled {
+  padding: 0.5rem 60px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+header .logo img {
+  width: 70.1px;
+  transition: width 0.3s ease; /* Smooth resizing of the logo */
+}
+
+header.navbar.scrolled .logo img {
+  width: 50px; /* Reduce logo size when scrolled */
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 9.125rem;
+  margin-top: 20px;
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(51, 11, 81, 1);
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #8a4af3;
+}
+
+.contact-btn {
+  position: relative; /* Needed for ::before to align properly */
+  display: block;
+  padding: 15px 30px;
+  background-color: transparent; /* White background */
+  color: #4a145e; /* Dark purple text */
+  font-size: 18px;
+  /* font-weight: bold; */
+  border: 2px solid #ffccd5; /* Light pink border */
+  border-radius: 6px; /* General rounded corners */
+  text-align: center;
+  cursor: pointer;
+  top: -12px;
+  overflow: hidden; /* Ensure the pseudo-element shows up */
+  /* outline: none; */
+}
+
+.contact-btn:hover {
+  background-color: #ffe6eb; /* Slightly darker pink background on hover */
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  background-color: #ffccd5;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  bottom: -48px;
+  right: -46px;
+  z-index: 0; 
+}
+/*======Header End=====*/
+
+
+/*========Hero Section Start=========== */
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+  left:124px;
+  flex-wrap: wrap;
+  margin-top: 122px;
+}
+
+.content {
+  max-width: 50%;
+}
+
+.content h1 {
+  font-size: 3.2rem;
+  color: #3d005d;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.content p {
+  font-size: 27px;
+  color: #330B51;
+  text-align: justify;
+  font-family: 'Inter';
+  font-style: normal;
+  letter-spacing: -0.005em;
+}
+
+.image-container {
+  max-width: 40%;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 43px;
+  border: 3px solid #3d005d;
+}
+/*========Hero Section End=========== */
+
+
+/*============Step Section start==========*/
+.ads-success-section h1 {
+  color: rgba(51, 11, 81, 1);
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 39px;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 100px;
+  background: linear-gradient(45deg, rgba(115, 25, 183, 1), rgba(51, 11, 81, 1));
+}
+
+.step {
+  flex: 1 1 300px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.step p {
+  font-size: 0.9rem;
+  text-align: left;
+}
+.step img {height: 120px;}
+
+.step h3 {
+    text-align: left;
+    font-size: 23.9px;
+    margin-top: 30px;
+}
+/*=======Step section end==========*/
+
+/*--====Google Ads Targeting Section start===*/
+
+/* Centering Content */
+.section-wrapper {
+  width: 100%;
+  /* text-align: center; */
+}
+
+/* Google Ads Section */
+.google-ads-section {
+  padding: 2rem 100px;
+}
+
+.google-ads-section h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #3D1B73;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: rgba(51, 11, 81, 1);
+  margin: 15px 82px 40px;
+}
+
+/* Ads Layout (Replaces .content) */
+.ads-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  margin-top: -40px;
+}
+
+/* Left Side (Icons + Text + Button) */
+.left-content {
+  flex: 1;
+  text-align: left;
+}
+
+/* Features Section - Aligning Icons on Top */
+.features {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align items at the top */
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align content */
+  text-align: center;
+}
+
+.feature img {
+  width: 152px;
+  margin-bottom: 10px; /* Space between icon and title */
+}
+
+.feature-text {
+  text-align: left;
+}
+
+.feature-text h3 {
+  color: #3D1B73;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.feature-text p {
+  font-size: 12px;
+  color: #555;
+  max-width: 268px;
+  margin-top: 5px;
+}
+
+/* Learn More Button (Aligned Left) */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 20px;
+  background-color: #3D1B73;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #5A2EA8;
+}
+
+/* Right Side (Illustration) */
+.illustration {
+  flex: 1;
+  text-align: right;
+}
+
+.illustration img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*--====Google Ads Targeting Section end===*/
+
+/*=========Google Ads Features Section start==========*/
+.google-ads-features {
+  text-align: center;
+  padding: 2rem 100px;
+  background-color: #f8f9fc;
+}
+
+.google-ads-features h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: rgba(51, 11, 81, 1);
+  margin-bottom: 15px;
+  font-family: 'Inter';
+}
+
+.google-ads-features .description {
+  font-size: 19px;
+  color: rgba(51, 11, 81, 1);
+  /* max-width: 800px; */
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 51.149px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Feature Card */
+.feature-card {
+  padding: 20px;
+  text-align: left;
+}
+
+.feature-card img {
+  width: 100%;
+  max-height: 321.8px;
+  object-fit: cover;
+  /* border-radius: 8px; */
+  height: 286.8px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  color: rgba(51, 11, 81, 1);
+  margin: 15px 0 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: rgba(51, 11, 81, 1);
+}
+/*=========Google Ads Features Section end==========*/
+
+/*--======Audit Form Section start========*/
+
+.audit-form {
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* Form Container */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 755.4px;
+  margin: 0px auto;
+}
+
+.form-container h2 {
+  background-color: #4a236d; /* Dark Purple Header */
+  color: white;
+  padding: 15px;
+  border-radius: 8px 8px 0 0;
+  font-size: 50px;
+  margin: -30px -30px 20px;
+}
+
+/* Form Inputs */
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #4a236d;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  height: 65px;
+  width: 645px;
+  outline: none;
+}
+
+form input:focus {
+  border-color: #6a2d91; /* Slightly lighter purple */
+}
+
+/* Submit Button */
+.form-container button {
+  width: 233px;
+  font-weight: bold;
+  padding: 12px;
+  height: 75.5px;
+  background-color: #4a236d;
+  color: white;
+  font-size: 27.5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+/* .form-container button:before{
+
+  content: '';
+  
+  position: absolute;
+  
+  height: 100px;
+  
+  width: 20px;
+  
+  background: #f3f3f3;
+  
+  box-shadow: 0 0 10px #fff;
+  
+  filter: blur(1px);
+  
+  opacity: 0.9;
+  
+  top: -30px;
+  
+  transition: 0.7s;
+  
+  transform: rotate(-20deg) translateX(-60px);
+}
+form button:hover:before{
+  transform: rotate(-20deg) translate (140px, 70px);
+} */
+
+form button:hover {
+  background-color: #6a2d91;
+}
+
+/* Back to Homepage Button */
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  color: #4B0082;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 2px solid rgba(51, 11, 81, 1);
+  padding: 10px;
+  border-radius: 23px;
+}
+a.btn-back:hover {
+  color: white;
+  background: #4B0082;
+  text-decoration: none;
+}
+
+/*--======Audit Form Section end========*/
+
+/*========Footer Styles start=========*/
+.footer {
+  background-color: #3e1653;
+  color: #f7c3e3;
+  padding: 60px 100px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; /* Add spacing between sections */
+}
+
+.footer-subscription {
+  flex: 1;
+  min-width: 250px;
+  margin-right: 20px;
+  text-align: left; /* Center subscription form on smaller devices */
+}
+
+.footer-subscription h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.subscription-form input {
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  width: 250px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.subscription-form button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 19px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 33px;
+  margin-top: 14px;
+}
+
+.footer-branding {
+  text-align: left; /* Align branding text to the center */
+  margin-top: 20px;
+}
+
+.footer-branding h1 {
+  margin: 5px 0;
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.footer-navigation {
+  flex: 1;
+  min-width: 200px;
+  text-align: center; /* Center navigation links */
+  margin-top: 155px;
+}
+
+.footer-navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 113px; /* Add spacing between links */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-navigation li {
+  margin: 0;
+}
+
+.footer-navigation a {
+  text-decoration: none;
+  color: #f7c3e3;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-navigation a:hover {
+  color: white;
+}
+
+.footer-social {
+  text-align: left;
+  margin-top: 208px;
+}
+
+.footer-social h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-social .social-links img {
+  width: 23px; /* Icon width as requested */
+  height: auto;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social .social-links img:hover {
+  transform: scale(1.2); /* Enlarge slightly on hover */
+}
+.social-links a {
+  text-decoration: none;
+}
+
+/*=========Footer End=========*/
+
+
+
+/* Responsive Styles */
+/*For 1024px*/
+@media (max-width: 1024px) {
+  /*========Header style start=========*/
+  header .logo img {
+    width: 60.1px;
+  }
+  header.navbar {
+    padding: 1rem 40px;
+  }
+
+  .nav-links {
+    gap: 40px;
+  }
+
+  .contact-btn {
+    font-size: 16px;
+  }
+  .nav-links a {
+    font-size: 15px;
+  }
+  /*======Header style end=========*/
+  /*=======Hero section style start=====*/
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 8vw 5vw;
+  }
+  
+  .content, .image-container {
+    max-width: 100%;
+  }
+  
+  .content h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .content p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+  /*=======Hero section style end======*/
+
+  /*===========step section style start==========*/
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step {
+    max-width: 100%;
+  }
+  /*===========step section style end==========*/
+
+  /*--====Google Ads Targeting Section start===*/
+  .subtitle {
+    max-width: 80%;
+  }
+  
+  .ads-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn {
+    margin-top: 1.5rem;
+  }
+
+  .illustration {
+    text-align: center;
+  }
+
+/*--====Google Ads Targeting Section end===*/
+
+/*======Audit Form Section start========*/
+/*======Audit Form Section end========*/
+  
+}
+
+/*For 768px*/
+
+@media (max-width: 768px) {
+  /*========Header Style start========*/
+  header.navbar {
+    padding: 0.5rem 20px; /* Adjust padding for smaller screens */
+  }
+
+  .logo img {
+    width: 50px; /* Smaller logo for smaller screens */
+    transition: width 0.3s ease; /* Smooth transition for logo size */
+  }
+
+  .menu-toggle {
+    display: flex; /* Ensure toggle button is visible */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px; /* Align at the top */
+    right: 20px; /* Right-aligned */
+    width: 50px; /* Set toggle size */
+    height: 50px;
+    background-color: #FBFDF7;
+    border-radius: 50%; /* Circular button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default on small screens */
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #FBFDF7;
+    position: absolute;
+    /* top: 100%; */ /* Position below the navbar */
+    left: 0;
+    width: 100%; /* Full width for dropdown */
+    padding: 1rem 20px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  }
+
+  nav.active .nav-links {
+    display: flex; /* Show links when active */
+  }
+  header.navbar {
+    flex-wrap: wrap;
+    padding: 1rem 20px;
+    position: fixed;
+  }
+
+  .logo img {
+    width: 58px !important; /* Decreased logo size for smaller screens */
+  }
+
+  .menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 50px; /* Set width to 50px */
+    height: 50px; /* Set height to 50px */
+    background-color: #FBFDF7; /* Optional: matching the header's background */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    font-size: 30px; /* Adjust the size of the icon */
+    color: rgba(51, 11, 81, 1); /* Matching the menu link color */
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FBFDF7;
+    padding: 1rem 0;
+    margin-top: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+  /*================Header end============*/
+
+  /*===========hero section style start==========*/
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .image-container {
+    max-width: 100%;
+  }
+  
+  /*===========hero section style End==========*/
+
+
+  /*========Stpes section start==========*/
+  .ads-success-section{
+    padding: 10vw 5vw;
+  }
+  .ads-success-section h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: left;
+  }
+
+  .steps {
+    padding: 6vw 3vw;
+  }
+
+  .step h3 {
+    text-align: center;
+  }
+
+  .step p {
+    text-align: center;
+  }
+  /*========Stpes section style start==========*/
+
+  /*--====Google Ads Targeting Section start===*/
+  .google-ads-section {
+    padding: 8vw 5vw;
+  }
+
+  .subtitle {
+    max-width: 100%;
+    margin: 2px;
+    margin-bottom: 55px;
+  }
+
+  .features {
+    gap: 1.5rem;
+  }
+
+  .feature img {
+    width: 70px;
+  }
+  /*--====Google Ads Targeting Section end===*/
+
+  /*=========Google Ads Features Section start==========*/
+
+  .google-ads-features {
+    padding: 40px 15px;
+}
+
+.google-ads-features h2 {
+    font-size: 24px;
+}
+
+.google-ads-features .description {
+    font-size: 14px;
+}
+
+.features-grid {
+    grid-template-columns: 1fr; /* Stack items in a single column */
+}
+
+.feature-card h3 {
+    font-size: 16px;
+}
+
+.feature-card p {
+    font-size: 13px;
+}
+
+  /*=========Google Ads Features Section end==========*/
+
+  /*======Audit Form Section start========*/
+  .form-container {
+    padding: 2rem;
+  }
+
+  .form-container h2 {
+    margin: -2rem -2rem 1rem;
+    font-size: 40px;
+  }
+
+  .form-container input {
+    font-size: 1rem;
+    padding: 0.9rem;
+    width: 100%;
+  }
+
+  .form-container button {
+    font-size: 1rem;
+    padding: 0.9rem;
+    width: 133px;
+    height: 50px;
+  }
+
+  .btn-back {
+    font-size: 0.9rem;
+  }
+  /*======Audit Form Section end========*/
+
+  /*===========Footer section style start==========*/
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-subscription,
+  .footer-navigation,
+  .footer-social {
+    margin-top: 20px;
+  }
+
+  .footer-branding h1 {
+    font-size: 26px;
+  }
+
+  .subscription-form input {
+    width: 100%;
+  }
+
+  .subscription-form button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .footer-navigation ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .footer-subscription {
+    text-align: center;
+    }
+  .footer-branding {
+      text-align: center;
+      }
+}
+  /*===========footer section style end==========*/
+
+/*For 480px*/
+@media (max-width: 480px) {
+  /*======Header Start=========*/
+  header.navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /*=====Header end=====*/
+  
+
+  /*=======step section style start======*/
+  .steps .step h4 {
+    font-size: 1rem;
+  }
+
+  .steps .step p {
+    font-size: 0.8rem;
+  }
+  /*===========step section style end==========*/
+
+    /*--====Google Ads Targeting Section start===*/
+  .google-ads-section h1 {
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+}
+
+.btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
+  /*--====Google Ads Targeting Section end===*/
+
+  /*--======Audit Form Section start========*/
+
+  .form-container {
+    width: 90%;
+    padding: 20px;
+}
+
+.form-container h2 {
+    font-size: 18px;
+    padding: 12px;
+}
+
+form input {
+    font-size: 13px;
+    padding: 10px;
+}
+
+form button {
+    font-size: 14px;
+}
+
+.btn-back {
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+  /*--======Audit Form Section end========*/
+
+  /*=======Footer section start=======*/
+  .subscription-form input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .social-links img {
+    width: 20px;
+  }
+
+  .footer-subscription h3 {
+    font-size: 16px;
+  }
+
+  .footer-branding h1 {
+    font-size: 20px;
+  }
+
+  .footer-navigation a {
+    font-size: 16px;
+  }
+
+  .footer-social h4 {
+    font-size: 14px;
+  }
+
+  .footer-social .social-links img {
+    width: 20px; /* Keep icons small for mobile */
+  }
+  .footer-subscription {
+  text-align: center;
+  }
+  .footer-branding {
+    text-align: center;
+  }
+}

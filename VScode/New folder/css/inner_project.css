@@ -1,0 +1,723 @@
+ /* General Reset */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #FBFDF7;
+  line-height: 1.6;
+}
+
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 80px;
+  background-color: #FBFDF7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+/* Add a smaller style when scrolling */
+header.navbar.scrolled {
+  padding: 0.5rem 60px; /* Reduce padding for a compact look */
+  background-color: #ffffff; /* Optional: Change the background color */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+header .logo img {
+  width: 70.1px;
+  transition: width 0.3s ease; /* Smooth resizing of the logo */
+}
+
+header.navbar.scrolled .logo img {
+  width: 50px; /* Reduce logo size when scrolled */
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 9.125rem;
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(51, 11, 81, 1);
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #8a4af3;
+}
+
+.contact-btn {
+  position: relative; /* Needed for ::before to align properly */
+  display: block;
+  padding: 15px 30px;
+  background-color: transparent; /* White background */
+  color: #4a145e; /* Dark purple text */
+  font-size: 18px;
+  /* font-weight: bold; */
+  border: 2px solid #ffccd5; /* Light pink border */
+  border-radius: 6px; /* General rounded corners */
+  text-align: center;
+  cursor: pointer;
+  top: -12px;
+  overflow: hidden; /* Ensure the pseudo-element shows up */
+  /* outline: none; */
+}
+
+.contact-btn:hover {
+  background-color: #ffe6eb; /* Slightly darker pink background on hover */
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  background-color: #ffccd5;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  bottom: -48px;
+  right: -46px;
+  z-index: 0; 
+}
+/*    */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+ 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  /*carnival section*/
+  .carnival-section {
+    display: flex;
+    margin-top: 157px;
+    align-items: center;
+    justify-content:space-evenly;
+    max-width: 2000px;
+    width: 100%;
+    background-color: #F7C3E3;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .text-content h1 {
+    font-size: 36px;
+    color: #5f3f97;
+    margin-bottom: 10px;
+  }
+  
+  .text-content p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5f3f97;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #9c65d2;
+  }
+  
+  .image-content {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .image-content img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+  }
+  
+  .carnival-section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #9c65d2;
+    border-radius: 50%;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+  /* service section*/
+  
+  .services-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://via.placeholder.com/1500x800') center center/cover no-repeat;
+  padding: 40px;
+  margin-top: -119px;
+}
+
+.services-container {
+  display: flex;
+  background-color: rgba(255, 153, 235, 0.8);
+  border-radius: 20px;
+  
+  padding: 40px;
+  max-width: 2000px;
+  width: 100%;
+  justify-content:space-evenly;
+}
+
+.logo-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container .icon {
+  margin-bottom: 5px;
+}
+
+.logo-container h2 {
+  font-size: 36px;
+  color: #5f3f97;
+}
+
+ol.c {
+  list-style-type: upper-roman;
+}
+
+.list-container {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.service-list {
+  list-style: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.service-list li {
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.service-list li:hover {
+  color: #9c65d2;
+  cursor: pointer;
+}
+/* card section */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #fefefc;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #4a148c;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fefefc;
+  color: #333;
+}
+
+.gallery-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  color: #4a148c;
+  margin-bottom: 20px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery-item {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-button-container {
+  margin-top: 50px;
+}
+
+.back-button {
+  background-color: #4a148c;
+  color: #fff;
+  border: 2px solid #4a148c;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #fff;
+  color: #4a148c;
+}
+
+        
+/*========Footer Styles start=========*/
+.footer {
+    background-color: #3e1653;
+    color: #f7c3e3;
+    padding: 60px 100px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px; /* Add spacing between sections */
+  }
+  
+  .footer-subscription {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+    text-align: left; /* Center subscription form on smaller devices */
+  }
+  
+  .footer-subscription h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .subscription-form {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .subscription-form input {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .subscription-form button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 19px;
+    cursor: pointer;
+    font-size: 14px;
+    height: 33px;
+    margin-top: 14px;
+  }
+  
+  .footer-branding {
+    text-align: left; /* Align branding text to the center */
+    margin-top: 20px;
+  }
+  
+  .footer-branding h1 {
+    margin: 5px 0;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .footer-navigation {
+    flex: 1;
+    min-width: 200px;
+    text-align: center; /* Center navigation links */
+    margin-top: 155px;
+  }
+  
+  .footer-navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 113px; /* Add spacing between links */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-navigation li {
+    margin: 0;
+  }
+  
+  .footer-navigation a {
+    text-decoration: none;
+    color: #f7c3e3;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-navigation a:hover {
+    color: white;
+  }
+  
+  .footer-social {
+    text-align: left;
+    margin-top: 208px;
+  }
+  
+  .footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .footer-social .social-links img {
+    width: 23px; /* Icon width as requested */
+    height: auto;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-social .social-links img:hover {
+    transform: scale(1.2); /* Enlarge slightly on hover */
+  }
+  
+  /*=========Footer End=========*/
+
+  @media (max-width: 1024px) {
+    /*========Header style start=========*/
+    header .logo img {
+      width: 60.1px;
+    }
+    header.navbar {
+      padding: 1rem 40px;
+    }
+  
+    .nav-links {
+      gap: 40px;
+    }
+  
+    .contact-btn {
+      font-size: 16px;
+    }
+    .nav-links a {
+      font-size: 15px;
+    }
+    /*======Header style end=========*/
+
+}
+
+@media (max-width: 768px) {
+    /*========Header Style start========*/
+  header.navbar {
+    padding: 0.5rem 20px; /* Adjust padding for smaller screens */
+  }
+
+  .logo img {
+    width: 50px; /* Smaller logo for smaller screens */
+    transition: width 0.3s ease; /* Smooth transition for logo size */
+  }
+
+  .menu-toggle {
+    display: flex; /* Ensure toggle button is visible */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px; /* Align at the top */
+    right: 20px; /* Right-aligned */
+    width: 50px; /* Set toggle size */
+    height: 50px;
+    background-color: #FBFDF7;
+    border-radius: 50%; /* Circular button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default on small screens */
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #FBFDF7;
+    position: absolute;
+    /* top: 100%; */ /* Position below the navbar */
+    left: 0;
+    width: 100%; /* Full width for dropdown */
+    padding: 1rem 20px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  }
+
+  nav.active .nav-links {
+    display: flex; /* Show links when active */
+  }
+  header.navbar {
+    flex-wrap: wrap;
+    padding: 1rem 20px;
+    position: fixed;
+  }
+
+  .logo img {
+    width: 58px !important; /* Decreased logo size for smaller screens */
+  }
+
+  .menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 50px; /* Set width to 50px */
+    height: 50px; /* Set height to 50px */
+    background-color: #FBFDF7; /* Optional: matching the header's background */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    font-size: 30px; /* Adjust the size of the icon */
+    color: rgba(51, 11, 81, 1); /* Matching the menu link color */
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FBFDF7;
+    padding: 1rem 0;
+    margin-top: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+  /*================Header end============*/
+    /*===========Footer section style start==========*/
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-subscription,
+  .footer-navigation,
+  .footer-social {
+    margin-top: 20px;
+  }
+
+  .footer-branding h1 {
+    font-size: 26px;
+  }
+
+  .subscription-form input {
+    width: 100%;
+  }
+
+  .subscription-form button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .footer-navigation ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .footer-subscription {
+    text-align: center;
+    }
+  .footer-branding {
+      text-align: center;
+      }
+
+  /*===========footer section style end==========*/
+
+}
+
+@media (max-width: 480px) {
+    /*======Header Start=========*/
+    header.navbar {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    /*=====Header end=====*/
+
+/*=======Footer section start=======*/
+.subscription-form input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .social-links img {
+    width: 20px;
+  }
+
+  .footer-subscription h3 {
+    font-size: 16px;
+  }
+
+  .footer-branding h1 {
+    font-size: 20px;
+  }
+
+  .footer-navigation a {
+    font-size: 16px;
+  }
+
+  .footer-social h4 {
+    font-size: 14px;
+  }
+
+  .footer-social .social-links img {
+    width: 20px; /* Keep icons small for mobile */
+  }
+  .footer-subscription {
+  text-align: center;
+  }
+  .footer-branding {
+    text-align: center;
+  }
+}  
