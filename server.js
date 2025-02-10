@@ -1,11 +1,19 @@
 require('dotenv').config(); // Load environment variables
-
-// Check if dotenv is loading the .env file correctly
-console.log('MONGO_URI:', process.env.MONGODB_URI); // This should print the MongoDB URI
-
+const fs = require('fs');
+const path = require('path');
 const mongoose = require('mongoose');
 const express = require('express');
-const path = require('path');
+
+// Check if index.html exists in the 'public' directory
+const indexPath = path.join(__dirname, 'public', 'index.html');
+
+fs.access(indexPath, fs.constants.F_OK, (err) => {
+  if (err) {
+    console.error('❌ index.html does not exist at', indexPath);
+  } else {
+    console.log('✅ index.html found at', indexPath);
+  }
+});
 
 const app = express();
 
@@ -13,23 +21,19 @@ const app = express();
 const connectDB = async () => {
   try {
     const uri = process.env.MONGODB_URI;  // Get the URI from the .env file
-
     if (!uri) {
       throw new Error("MongoDB URI is not defined in the .env file.");
     }
-
-    // Connect to MongoDB
     await mongoose.connect(uri); 
     console.log('✅ MongoDB connected successfully');
   } catch (error) {
     console.error('❌ MongoDB connection failed:', error.message);
-    process.exit(1); // Exit process with failure
+    process.exit(1);
   }
 };
 
 // Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' directory
 
 // Health check route
 app.get('/health', (req, res) => {
@@ -41,14 +45,13 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Root route - Send the index.html file when visiting the root URL
+// Serve index.html if found
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Test route to check if the API is working
-app.get('/api/test', (req, res) => {
-  res.json({ message: 'API is working!' });
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      res.status(500).send('❌ Error: index.html not found');
+    }
+  });
 });
 
 // Start the server
