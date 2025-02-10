@@ -1,4 +1,8 @@
 require('dotenv').config(); // Load environment variables
+
+// Check if dotenv is loading the .env file correctly
+console.log('MONGO_URI:', process.env.MONGODB_URI); // This should print the MongoDB URI
+
 const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
@@ -9,12 +13,13 @@ const app = express();
 const connectDB = async () => {
   try {
     const uri = process.env.MONGODB_URI;  // Get the URI from the .env file
+
     if (!uri) {
       throw new Error("MongoDB URI is not defined in the .env file.");
     }
-    
-    // Connect to MongoDB without deprecated options
-    await mongoose.connect(uri);  // No need for useNewUrlParser and useUnifiedTopology
+
+    // Connect to MongoDB
+    await mongoose.connect(uri); 
     console.log('✅ MongoDB connected successfully');
   } catch (error) {
     console.error('❌ MongoDB connection failed:', error.message);
@@ -22,28 +27,9 @@ const connectDB = async () => {
   }
 };
 
-// Define a schema and model
-const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-});
-
-const User = mongoose.model('User', userSchema);
-
-// Create a user
-const createUser = async () => {
-  try {
-    const user = new User({ name: 'John Doe', email: 'john.doe@example.com' });
-    await user.save();
-    console.log('✅ User created:', user);
-  } catch (error) {
-    console.error('❌ Error creating user:', error.message);
-  }
-};
-
 // Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' directory
 
 // Health check route
 app.get('/health', (req, res) => {
@@ -55,19 +41,23 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Root route
+// Root route - Send the index.html file when visiting the root URL
 app.get('/', (req, res) => {
-  res.send('🚀 Server is running & MongoDB Connected!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Test route to check if the API is working
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working!' });
 });
 
 // Start the server
 const startServer = async () => {
   await connectDB(); // Connect to MongoDB
-  await createUser(); // Create a test user
 
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
   });
 };
 
@@ -79,11 +69,15 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, error: err.message });
 });
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
+// Graceful shutdown with promises for mongoose connection close
+process.on('SIGTERM', async () => {
   console.log('👋 SIGTERM received. Shutting down gracefully...');
-  mongoose.connection.close(() => {
+  try {
+    await mongoose.connection.close();
     console.log('✅ MongoDB connection closed');
-    process.exit(0);
-  });
+    process.exit(0); // Exit gracefully
+  } catch (err) {
+    console.error('❌ Error closing MongoDB connection:', err);
+    process.exit(1); // Exit with error
+  }
 });
